@@ -1,5 +1,5 @@
 var allcandidates = {
- "name": "Democratic" + "<br> "+"Debate",
+ "name": "Democratic Presidential Debate",
  "rank": "",
  "size": 0,
  "pic":  "trump.png",
