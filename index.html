@@ -216,21 +216,21 @@ button {
                         .attr("x", 0)
                         .attr("dx", function(d) {
                             if (d._children) {
-                                return source.y + 30 + height / 20;
+                                return source.y + 40 + height / 10;
                             } else {
                                 return 0;
                             };
                         })
                         .attr("y", function(d) {
                             if (d._children) {
-                                return height / 20 + 15;
+                                return 0;
                             } else {
                                 return -20;
                             };
                         })
                         .attr("dy", function(d) {
                             if (d._children) {
-                                return 0;
+                                return ".35em";
                             } else {
                                 return ".5em";
                             };
@@ -242,7 +242,13 @@ button {
                                 return "translate(" + (source.y - 60) + "," + 0 + ")"
                             };
                         })
-                        .attr("text-anchor", "middle")
+                        .attr("text-anchor", function(d) {
+                            if (d._children) {
+                                return "start";
+                            } else {
+                                return "middle";
+                            };
+                        })
                         .text(function(d) {
                             return d.name;
                         })
