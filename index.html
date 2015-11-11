@@ -384,25 +384,29 @@ button {
             svg.selectAll("text").remove();
             svg.selectAll(".link").remove();
 
-            console.log(currentCandidate)
 
             root = [];
 
+            
+            currentCandidate = currentCandidate.substr(1);
 
-            if (currentCandidate === "1Bernie Sanders") {
+            console.log(currentCandidate);
+
+
+            if (currentCandidate == "Bernie Sanders") {
                 root = sanders;
-            } else if (currentCandidate === "2Hillary Clinton") {
+            } else if (currentCandidate == "Hillary Clinton") {
                 root = clinton;
-            } else if (currentCandidate === "3Martin O'Malley") {
+            } else if (currentCandidate == "Martin O'Malley") {
                 root = omalley;
             };
 
             root.x0 = height / 2;
             root.y0 = 0;
 
-            repeat_solo();
+            console.log(root);
 
-            // repeat();
+            repeat_solo();
 
         }
 
@@ -470,7 +474,8 @@ button {
                     .attr("class", "node")
                     .attr("transform", function(d) {
                         return "translate(" + source.y0 + "," + source.x0 + ")";
-                    });
+                    })
+                    .on("click", click);
 
                 //append circles
                 nodeEnter.append("circle")
@@ -484,6 +489,9 @@ button {
                             return "#fff";
                         }
                     });
+
+                nodeEnter.attr('pointer-events', 'all')
+                    .attr('cursor', 'pointer');
 
                 //append circle for illustrations
 
