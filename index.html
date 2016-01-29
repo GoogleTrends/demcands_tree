@@ -92,6 +92,16 @@ button {
             // .call(responsivefy)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            
+        svg.append("text")
+            .attr("text-anchor","front")
+            .attr("id","credit")
+            .text("Designed by Jieqian Zhang")
+            .style("fill","darkgrey")
+            .style("font-size",10)
+            .attr("x", -265)
+            .attr("y", 500);
+
 
         // Note: Instead of importing .json data file, I imported a .js file so to avoid the asynchronous nature of an external request. Please give the var a name in the .js file, and apply the data to root.
         // The children node expanding only works with .js data file!
